@@ -18,12 +18,12 @@
 /*    */ 
 /*    */ 
 /*    */ 
-/*    */ public class ActorsPalette
+/*    */ public class ActorsPaletteIStar2
 /*    */   extends AbstractPalette
 /*    */ {
 /* 24 */   private static final Logger CONSOLE = Logger.getLogger("console");
-/*    */   
-/*    */   public ActorsPalette(JTabbedPane libraryPane) {
+/*    */   /*    */   
+/*    */   public ActorsPaletteIStar2(JTabbedPane libraryPane) {
 /* 27 */     super(mxResources.get("Elements", "Actors"), libraryPane);
 /*    */     
 /*    */ 
@@ -37,7 +37,7 @@
 /*    */       try
 /*    */       {
 /* 39 */         String nodeXml = mxUtils.readFile(f.getAbsolutePath());
-/* 40 */         if (f.getName().matches("actor.shape|actor_agent.shape|actor_position.shape|actor_role.shape")) {
+/* 40 */         if (f.getName().matches("actor.shape|actor_agent.shape|actor_role.shape")) {
 /* 41 */           ImporStencilAction.addStencilShape(this, nodeXml, f.getParent() + File.separator);
 /*    */         }
 /*    */       } catch (IOException ex) {

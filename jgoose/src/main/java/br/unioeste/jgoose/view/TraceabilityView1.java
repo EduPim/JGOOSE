@@ -785,7 +785,7 @@ public final class TraceabilityView1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jtfFilterActionPerformed
 
     private void btnMenuHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuHomeActionPerformed
-        MainView mainView = new MainView(E4JiStar, E4JBPMN, E4JUseCases, useCasesViewIStar, useCasesViewBPMN);
+        MainView mainView = new MainView(E4JiStar, E4JBPMN, E4JUseCases, useCasesViewIStar, useCasesViewBPMN, E4JiStar);
         this.setVisible(false);
         mainView.setVisible(true);
     }//GEN-LAST:event_btnMenuHomeActionPerformed

@@ -9,6 +9,7 @@ import br.unioeste.jgoose.controller.HorizontalControler;
 import br.unioeste.jgoose.controller.VerticalTraceController;
 import br.unioeste.jgoose.e4j.swing.BasicBPMNEditor;
 import br.unioeste.jgoose.e4j.swing.BasicIStarEditor;
+import br.unioeste.jgoose.e4j.swing.BasicIStar2Editor;
 import br.unioeste.jgoose.e4j.swing.BasicUseCasesEditor;
 import br.unioeste.jgoose.e4j.swing.EditorJFrame;
 import br.unioeste.jgoose.e4j.swing.menubar.EditorMenuBar;
@@ -57,6 +58,7 @@ public final class MainView extends javax.swing.JFrame {
     private TraceabilityView1 traceabilityView = null;
     private static final Logger LOG = Logger.getLogger("console");
     private EditorJFrame E4JiStar = null;
+    private EditorJFrame E4JiStar2 = null;
     private EditorJFrame E4JUseCases = null;
     private EditorJFrame E4JBPMN = null;
     private JFrame E4JTraceability = null;
@@ -75,9 +77,10 @@ public final class MainView extends javax.swing.JFrame {
      * @param useCasesViewBPMN
      */
     public MainView(EditorJFrame E4JiStar, EditorJFrame E4JBPMN, EditorJFrame E4JUseCases,
-            UseCasesViewIStar useCasesViewIStar, UseCasesViewBPMN useCasesViewBPMN) {
+            UseCasesViewIStar useCasesViewIStar, UseCasesViewBPMN useCasesViewBPMN, EditorJFrame E4JiStar2) {
         this.E4JBPMN = E4JBPMN;
         this.E4JiStar = E4JiStar;
+        this.E4JiStar2 = E4JiStar2;
         this.E4JUseCases = E4JUseCases;
         this.useCasesViewIStar = useCasesViewIStar;
         this.useCasesViewBPMN = useCasesViewBPMN;
@@ -152,6 +155,7 @@ public final class MainView extends javax.swing.JFrame {
         buttonVerticalTraceability = new javax.swing.JButton();
         jPanel4buttonHorizontalTraceability = new javax.swing.JPanel();
         buttonHorizontalTraceability = new javax.swing.JButton();
+        buttonOpenE4JiStar1 = new javax.swing.JButton();
         jPanelImages = new javax.swing.JPanel();
         jLabelSubTitleImg2 = new javax.swing.JLabel();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
@@ -533,30 +537,64 @@ public final class MainView extends javax.swing.JFrame {
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
+        buttonOpenE4JiStar1.setBackground(new java.awt.Color(255, 255, 255));
+        buttonOpenE4JiStar1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        buttonOpenE4JiStar1.setForeground(new java.awt.Color(15, 157, 229));
+        buttonOpenE4JiStar1.setText("<html><center> i* 2.0 <br> Editor ");
+        buttonOpenE4JiStar1.setToolTipText("Open i* Editor");
+        buttonOpenE4JiStar1.setBorder(null);
+        buttonOpenE4JiStar1.setBorderPainted(false);
+        buttonOpenE4JiStar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        buttonOpenE4JiStar1.setFocusable(false);
+        buttonOpenE4JiStar1.setIconTextGap(0);
+        buttonOpenE4JiStar1.setName(""); // NOI18N
+        buttonOpenE4JiStar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                buttonOpenE4JiStar1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonOpenE4JiStar1MouseExited(evt);
+            }
+        });
+        buttonOpenE4JiStar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonOpenE4JiStar2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelTitleAndButtonsLayout = new javax.swing.GroupLayout(jPanelTitleAndButtons);
         jPanelTitleAndButtons.setLayout(jPanelTitleAndButtonsLayout);
         jPanelTitleAndButtonsLayout.setHorizontalGroup(
             jPanelTitleAndButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelTitleAndButtonsLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanelTitleAndButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelTitleAndButtonsLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanelTitleAndButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanelTitleAndButtonsLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanelTitleAndButtonsLayout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(buttonOpenE4JiStar1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel2)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelTitleAndButtonsLayout.setVerticalGroup(
             jPanelTitleAndButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelTitleAndButtonsLayout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addGroup(jPanelTitleAndButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addGroup(jPanelTitleAndButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelTitleAndButtonsLayout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addGroup(jPanelTitleAndButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelTitleAndButtonsLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(buttonOpenE4JiStar1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -1102,6 +1140,24 @@ public final class MainView extends javax.swing.JFrame {
         this.showAboutDialog();
     }//GEN-LAST:event_menuAboutMouseClicked
 
+    private void buttonOpenE4JiStar1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonOpenE4JiStar1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonOpenE4JiStar1MouseEntered
+
+    private void buttonOpenE4JiStar1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonOpenE4JiStar1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonOpenE4JiStar1MouseExited
+
+    private void buttonOpenE4JiStar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonOpenE4JiStar2ActionPerformed
+        try {
+            this.showE4JiStar2();
+        } catch (HeadlessException ex) {
+            java.util.logging.Logger.getLogger(MainView.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            java.util.logging.Logger.getLogger(MainView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_buttonOpenE4JiStar2ActionPerformed
+
     private static void open(URI uri) {
         if (Desktop.isDesktopSupported()) {
             try {
@@ -1176,6 +1232,44 @@ public final class MainView extends javax.swing.JFrame {
         }
         Controller.setMainView(this);
         E4JiStar.setVisible(true);
+        this.setVisible(false);
+    }
+    
+    
+     /**
+     * Abre o Editor E4J i* 2.0
+     */
+    public void showE4JiStar2() throws HeadlessException, IOException {
+        if (E4JiStar2 == null) {
+            E4JiStar2 = new EditorJFrame(4);
+            E4JiStar2.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+            E4JiStar2.setIconImage(iconJGOOSE);
+            E4JiStar2.setExtendedState(MAXIMIZED_BOTH);
+            EditorWindowListener windowListener = new EditorWindowListener(this, E4JiStar2);
+            this.addWindowListener(windowListener);
+            E4JiStar2.addWindowListener(windowListener);
+            this.addWindowListener(windowListener);
+            BasicIStar2Editor editor = (BasicIStar2Editor) E4JiStar2.getEditor();
+            JMenuBar menubar = E4JiStar2.getJMenuBar();
+            // get diagram menu ba
+            JMenu fileMenu = ((EditorMenuBar) menubar).getFileMenu();
+            // alias label = l
+            String label = mxResources.get("useCaseMaker", null, "Generate Use Cases");
+            JMenuItem menuItem = new JMenuItem(editor.bind(label, new ImportIStarGraph(E4JiStar)));
+            fileMenu.add(menuItem, 3);
+            fileMenu.add(new JPopupMenu.Separator(), 4);
+            String label1 = mxResources.get("traceabilityMaker", null, "Horizontal Traceability");
+            JMenuItem menuItem1 = new JMenuItem(editor.bind(label1, new HorizontalControler(E4JiStar, E4JBPMN, E4JUseCases, useCasesViewIStar, useCasesViewBPMN, 1)));
+            fileMenu.add(menuItem1, 3);
+            fileMenu.add(new JPopupMenu.Separator(), 4);
+            String label2 = mxResources.get("traceabilityMaker", null, "Vertical Traceability");
+            JMenuItem menuItem2 = new JMenuItem(editor.bind(label2, new VerticalTraceController(E4JiStar, E4JBPMN, E4JUseCases, useCasesViewIStar, useCasesViewBPMN, 2)));
+            fileMenu.add(menuItem2, 3);
+            fileMenu.add(new JPopupMenu.Separator(), 4);
+
+        }
+        Controller.setMainView(this);
+        E4JiStar2.setVisible(true);
         this.setVisible(false);
     }
 
@@ -1397,6 +1491,7 @@ public final class MainView extends javax.swing.JFrame {
     public javax.swing.JButton buttonOpenE4JBPMN;
     private javax.swing.JButton buttonOpenE4JUseCases;
     private javax.swing.JButton buttonOpenE4JiStar;
+    private javax.swing.JButton buttonOpenE4JiStar1;
     private javax.swing.JButton buttonVerticalTraceability;
     private javax.swing.JButton buttunMappingUseCases;
     private javax.swing.JMenuItem fileOpenTelosFile;

@@ -37,7 +37,12 @@ public class EditorJFrame extends JFrame {
         } else if (type == 3){  
             this.editorTraceability = new BasicTraceabilityEditor(this);
             this.getContentPane().add(this.editor);
-        }   
+        }   else if (type == 4){
+            System.out.println("AQUI - 1");
+            this.editor = new BasicIStar2Editor(this);
+            this.getContentPane().add(this.editor);
+            System.out.println("AQUI - 2");
+        }
         // add menubar
         this.menubar = new EditorMenuBar(editor);
         this.setJMenuBar(menubar);
