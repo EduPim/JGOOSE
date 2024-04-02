@@ -259,9 +259,9 @@ public class ImportIStarMLAction extends AbstractAction {
                 value = IStarUtils.createGoal();
                 style = "shape=Goal";
                 break;
-            case "softgoal":
+            case "quality":
                 value = IStarUtils.createSoftGoal();
-                style = "shape=Softgoal";
+                style = "shape=Quality";
                 break;
             case "resource":
                 value = IStarUtils.createResource();

@@ -6,11 +6,11 @@
 /*    */ import br.unioeste.jgoose.e4j.swing.listeners.SelectedEdgeChangeEventListener;
 /*    */ import br.unioeste.jgoose.e4j.swing.palettes.ActorAssociationsPaletteIStar2;
 /*    */ import br.unioeste.jgoose.e4j.swing.palettes.ActorsPaletteIStar2;
-/*    */ import br.unioeste.jgoose.e4j.swing.palettes.ContributionLinksPalette;
-/*    */ import br.unioeste.jgoose.e4j.swing.palettes.DependencyElementsPalette;
-/*    */ import br.unioeste.jgoose.e4j.swing.palettes.RelationshipLinksPalette;
+/*    */ import br.unioeste.jgoose.e4j.swing.palettes.ContributionLinksPalette2; 
+/*    */ import br.unioeste.jgoose.e4j.swing.palettes.DependencyElementsPalette2;//problema
+/*    */ import br.unioeste.jgoose.e4j.swing.palettes.RelationshipLinksPalette2;
 /*    */ import com.mxgraph.swing.mxGraphComponent;
-import com.mxgraph.util.mxEventSource;
+/*    */ import com.mxgraph.util.mxEventSource;
 /*    */ import com.mxgraph.view.mxGraph;
 /*    */ import java.net.URL;
 /*    */ import java.text.NumberFormat;
@@ -61,9 +61,9 @@ import com.mxgraph.util.mxEventSource;
 /*    */ 
 /* 61 */     EditorPalette actorsPalette = new ActorsPaletteIStar2(this.libraryPane);
 /* 62 */     EditorPalette actorAssosiationsPalette = new ActorAssociationsPaletteIStar2(this.libraryPane);
-/* 63 */     EditorPalette dependencyElementsPalette = new DependencyElementsPalette(this.libraryPane);
-/* 64 */     EditorPalette relationshipLinksPalette = new RelationshipLinksPalette(this.libraryPane);
-/* 65 */     EditorPalette contributionLinksPalette = new ContributionLinksPalette(this.libraryPane);
+/* 63 */     EditorPalette dependencyElementsPalette = new DependencyElementsPalette2(this.libraryPane);
+/* 64 */     EditorPalette relationshipLinksPalette = new RelationshipLinksPalette2(this.libraryPane);
+/* 65 */     EditorPalette contributionLinksPalette = new ContributionLinksPalette2(this.libraryPane);
 /*    */     
 /*    */ 
 /* 68 */     actorsPalette.addListener("select", (mxEventSource.mxIEventListener) new SelectedEdgeChangeEventListener(graph));
