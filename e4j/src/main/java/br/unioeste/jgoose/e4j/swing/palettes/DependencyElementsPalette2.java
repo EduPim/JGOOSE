@@ -1,6 +1,6 @@
 /*    */ package br.unioeste.jgoose.e4j.swing.palettes;
 /*    */ 
-/*    */ import br.unioeste.jgoose.e4j.actions.ImporStencilAction;
+/*    */ import br.unioeste.jgoose.e4j.actions.ImporStencilAction2;
 /*    */ import br.unioeste.jgoose.e4j.filters.ShapeFilenameFilter;
 /*    */ import com.mxgraph.util.mxResources;
 /*    */ import com.mxgraph.util.mxUtils;
@@ -8,7 +8,7 @@
 /*    */ import java.io.IOException;
 /*    */ import javax.swing.JTabbedPane;
 /*    */ import org.apache.log4j.Logger;
-/*    */ 
+
 /*    */ public class DependencyElementsPalette2
 /*    */   extends AbstractPalette
 /*    */ {
@@ -28,7 +28,7 @@
 /*    */       {
 /* 37 */         String nodeXml = mxUtils.readFile(f.getAbsolutePath());
 /* 38 */         if (!f.getName().matches("actor.shape|actor_agent.shape|actor_position.shape|actor_role.shape")) {
-/* 39 */           ImporStencilAction.addStencilShape(this, nodeXml, f.getParent() + File.separator);
+/* 39 */           ImporStencilAction2.addStencilShape(this, nodeXml, f.getParent() + File.separator);
 /*    */         }
 /*    */       } catch (IOException ex) {
 /* 42 */         CONSOLE.fatal(ex);

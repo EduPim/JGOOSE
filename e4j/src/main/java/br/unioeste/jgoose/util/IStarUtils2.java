@@ -7,7 +7,7 @@ import org.w3c.dom.Element;
 
 /**
  *
- * @author Leonardo
+ * @author Eduardo Pimentel
  */
 public class IStarUtils2 {
     

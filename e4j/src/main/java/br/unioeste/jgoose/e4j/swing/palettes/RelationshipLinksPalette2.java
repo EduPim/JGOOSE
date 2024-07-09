@@ -2,6 +2,7 @@
 /*    */ 
 ///*    */ import br.unioeste.jgoose.e4j.shape.DecompositionMarker;
 /*    */ import br.unioeste.jgoose.e4j.shape.DependencyMarker;
+/*    */ import br.unioeste.jgoose.util.IStarUtils; ////////tirar
 /*    */ import br.unioeste.jgoose.util.IStarUtils2;
 /*    */ import com.mxgraph.shape.mxMarkerRegistry;
 /*    */ import com.mxgraph.util.mxResources;
@@ -22,11 +23,13 @@
 /* 30 */     addEdgeTemplate(element.getAttribute("label"), new ImageIcon("resources/shapes/elements/dependency.png"), "straight;endArrow=dependency;noLabel=1;shape=curvedEdge;edgeStyle=curvedEdgeStyle", 80, 80, element);
 /*    */     
 /*    */ 
-/* 33 */     //element = IStarUtils.createMeansEnd();
-/* 34 */     //addEdgeTemplate(element.getAttribute("label"), new ImageIcon("resources/shapes/elements/meansend.png"), "straight;noLabel=1;shape=curvedEdge;edgeStyle=curvedEdgeStyle", 80, 80, element);
-/* 36 */     //element = IStarUtils.createDecomposition();
-/* 37 */     //mxMarkerRegistry.registerMarker("decomposition", new DecompositionMarker());
-/* 38 */     //addEdgeTemplate(element.getAttribute("label"), new ImageIcon("resources/shapes/elements/decomposition.png"), "straight;endArrow=decomposition;noLabel=1;", 80, 80, element);
+/*    */ 
+/* 33 *///     element = IStarUtils.createMeansEnd();
+/* 34 *///     addEdgeTemplate(element.getAttribute("label"), new ImageIcon("resources/shapes/elements/meansend.png"), "straight;noLabel=1;shape=curvedEdge;edgeStyle=curvedEdgeStyle", 80, 80, element);
+/*    */     
+/* 36 *///     element = IStarUtils.createDecomposition();
+/* 37 *///     mxMarkerRegistry.registerMarker("decomposition", new DecompositionMarker());
+/* 38 *///     addEdgeTemplate(element.getAttribute("label"), new ImageIcon("resources/shapes/elements/decomposition.png"), "straight;endArrow=decomposition;noLabel=1;", 80, 80, element);
 /*    */   }
 /*    */ }
 
