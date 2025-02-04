@@ -241,7 +241,7 @@ public class CustomGraph extends mxGraph {
                 }
                 break;
             case "dependency":
-                if ((sourceType.matches("softgoal")) && targetType.matches("goal")) {
+                if ((sourceType.matches("softgoal|Quality")) && targetType.matches("goal")) {
                     String error = "Edge '"
                             + "" + edgeTag
                             + "' between "
@@ -268,7 +268,7 @@ public class CustomGraph extends mxGraph {
             case "ielementLink":
                 switch (edgeType) {
                     case "decomposition":
-                        if (!(targetType.matches("task") && sourceType.matches("goal|softgoal|task|resource"))) {
+                        if (!(targetType.matches("task|Quality") && sourceType.matches("goal|Quality|softgoal|task|resource"))) {
                             String error = "Edge '"
                                     + "" + edgeType
                                     + "' between "
@@ -285,7 +285,7 @@ public class CustomGraph extends mxGraph {
                         }
                         break;
                     case "meansend":
-                        if (!(sourceType.matches("task") && targetType.matches("goal|resource|task")) && !(sourceType.matches("goal") && targetType.matches("goal"))) {
+                        if (!(sourceType.matches("task|Quality") && targetType.matches("goal|resource|task")) && !(sourceType.matches("goal") && targetType.matches("goal"))) {
                             String error = "Edge '"
                                     + "" + edgeTag
                                     + "' between "
@@ -329,7 +329,7 @@ public class CustomGraph extends mxGraph {
                                 + "are notimplemented yet.");
                         break;
                     case "contribution":
-                        if (!(sourceType.matches("task|softgoal") && targetType.matches("softgoal"))) {
+                        if (!(sourceType.matches("task|softgoal|Quality") && targetType.matches("softgoal|Quality|task"))) {
                             String error = "Edge '"
                                     + "" + edgeTag
                                     + "' between "
