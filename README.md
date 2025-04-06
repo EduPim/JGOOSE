@@ -1,5 +1,3 @@
-"# JgoosePrivTests" 
-
 JGOOSE
 JGOOSE tool
 
