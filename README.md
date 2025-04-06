@@ -1,4 +1,4 @@
-# JGOOSE
+# JGOOSEPrivTests
 JGOOSE tool
 
 ## How to compile JGOOSE 
