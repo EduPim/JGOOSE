@@ -35,7 +35,7 @@
 /*    */       try
 /*    */       {
 /* 37 */         String nodeXml = mxUtils.readFile(f.getAbsolutePath());
-/* 38 */         if (!f.getName().matches("actor.shape|actor_agent.shape|actor_position.shape|actor_role.shape")) {
+/* 38 */         if (!f.getName().matches("actor.shape|actor_agent.shape|actor_position.shape|actor_role.shape|quality.shape")) {
 /* 39 */           ImporStencilAction.addStencilShape(this, nodeXml, f.getParent() + File.separator);
 /*    */         }
 /*    */       } catch (IOException ex) {

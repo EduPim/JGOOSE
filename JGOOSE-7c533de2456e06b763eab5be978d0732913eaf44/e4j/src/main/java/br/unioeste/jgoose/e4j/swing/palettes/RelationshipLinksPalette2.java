@@ -29,7 +29,7 @@
 /*    */     
 /* 36 */     element = IStarUtils2.createDecomposition();
 /* 37 */     mxMarkerRegistry.registerMarker("decomposition", new DecompositionMarker());
-/* 38 */     addEdgeTemplate(element.getAttribute("label"), new ImageIcon("resources/shapes/elements/decomposition.png"), "straight;endSize=10;endArrow=decomposition;noLabel=1;", 80, 80, element);
+/* 38 */     addEdgeTemplate(element.getAttribute("label"), new ImageIcon("resources/shapes/elements/decomposition.png"), "straight;endArrow=decomposition;noLabel=1;", 80, 80, element);
 
 /* 33 */    ///////////////////testes
 
